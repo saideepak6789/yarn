@@ -1,5 +1,5 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/dulcet-voyager-351710/test', '.']
+    args: ['build', '-t', 'gcr.io/dulcet-voyager-351710/dock', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/dulcet-voyager-351710/test']
+    args: ['push', 'gcr.io/dulcet-voyager-351710/dock']

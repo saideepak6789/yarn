@@ -5,5 +5,5 @@ steps:
   args: ['push', 'us-east1-docker.pkg.dev/dulcet-voyager-351710/dock/dock']
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy --service=my-first-service']
+  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy --service-account=deepak@dulcet-voyager-351710.iam.gserviceaccount.com ']
 timeout: '1600s'  

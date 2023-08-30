@@ -10,8 +10,6 @@ resources:
 network:
   forwarded_ports:
     - 8080
-health_check:
-  enable_health_check: false
 runtime_config:
   build:
     image:us-east1-docker.pkg.dev/dulcet-voyager-351710/dock/dock:latest

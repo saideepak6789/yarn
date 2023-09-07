@@ -3,6 +3,4 @@ steps:
   entrypoint: 'bash'
   args:
     echo "Secret Value hello world"
-options:
-  logging: CLOUD_LOGGING_ONLY
-  
+

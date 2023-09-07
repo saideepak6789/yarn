@@ -1,5 +1,13 @@
 steps:
-- name: gcr.io/cloud-builders/gcloud
+- name: "gcr.io/cloud-builders/gcloud"
+  secretEnv: ['SECRET_ONE','SECRET_TWO']
   entrypoint: 'bash'
-  args: [ '-c', "gcloud secrets versions access latest --secret=test --format='get(payload.data)' | tr '_-' '/+' | base64 -d > decrypted-data.txt" ]
-  args: [ '-c', "ls" ]
+  args: 
+  - -c
+  - |
+    echo $'\n  SECRET_ONE: '$$SECRET_ONE >> app.yaml
+    cat app.yaml
+availableSecrets:
+  secretManager:
+  - versionName: projects/257298455441/secrets/test
+    env: 'test'

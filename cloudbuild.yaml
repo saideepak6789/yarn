@@ -9,5 +9,5 @@ steps:
     cat app.yaml
 availableSecrets:
   secretManager:
-  - versionName: projects/257298455441/secrets/test:latest
+  - versionName: projects/257298455441/secrets/test:1
     env: 'test'

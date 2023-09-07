@@ -5,7 +5,7 @@ steps:
   - '-c'
   - |
     # Use the gcloud command to fetch the secret and store it in a variable
-    SECRET_VALUE=$(gcloud secrets versions access latest --secret=test --project=your-project-id --format="value(payload.data.YOUR_SECRET_FIELD)")
+    SECRET_VALUE=$(gcloud secrets versions access latest --secret=test --project=your-project-id --format="value(payload.data.value)")
 
     # Print the secret value
     echo "Secret Value: $SECRET_VALUE"

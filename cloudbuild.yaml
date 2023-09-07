@@ -6,7 +6,7 @@ steps:
   - -c
   - |
     echo $'\n  SECRET_ONE: '$$test >> new.txt
-    cat app.yaml
+    cat new.txt
 availableSecrets:
   secretManager:
   - versionName: projects/257298455441/secrets/test/versions/1

@@ -5,7 +5,7 @@ steps:
   args: 
   - -c
   - |
-    echo $'\n  SECRET_ONE: '$$test >> app.yaml
+    echo $'\n  SECRET_ONE: '$$test >> new.txt
     cat app.yaml
 availableSecrets:
   secretManager:

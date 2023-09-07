@@ -8,7 +8,7 @@ steps:
     SECRET_VALUE=$(gcloud secrets versions access latest --secret=test --project=dulcet-voyager-351710 --format="value(payload.data.YOUR_SECRET_FIELD)")
 
     # Print the secret value
-    echo "Secret Value: $test"
+    echo "Secret Value: $secret"
 options:
   logging: CLOUD_LOGGING_ONLY
   CLOUD_LOGGING_ONLY: none

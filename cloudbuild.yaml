@@ -1,7 +1,14 @@
 steps:
-- name: gcr.io/cloud-builders/gcloud
+- name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
-  args: [ '-c', "gcloud secrets versions access latest --secret=test --format='get(payload.data)' | tr '_-' '/+' | base64 -d > decrypted-data.txt" ]
+  args:
+  - '-c'
+  - |
+    # Use the gcloud command to fetch the secret and store it in a variable
+    SECRET_VALUE=$(gcloud secrets versions access latest --secret=test --project=your-project-id --format="value(payload.data.YOUR_SECRET_FIELD)")
+
+    # Print the secret value
+    echo "Secret Value: $SECRET_VALUE"
 options:
   logging: CLOUD_LOGGING_ONLY
   

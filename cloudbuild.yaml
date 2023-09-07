@@ -1,11 +1,11 @@
 steps:
 - name: "gcr.io/cloud-builders/gcloud"
-  secretEnv: ['SECRET_ONE','SECRET_TWO']
+  secretEnv: ['test']
   entrypoint: 'bash'
   args: 
   - -c
   - |
-    echo $'\n  SECRET_ONE: '$$SECRET_ONE >> app.yaml
+    echo $'\n  SECRET_ONE: '$$test >> app.yaml
     cat app.yaml
 availableSecrets:
   secretManager:

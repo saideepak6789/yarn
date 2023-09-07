@@ -1,6 +1,9 @@
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
+- name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
-  args:
-    echo "Secret Value hello world"
-
+  args: ['-c', 'docker login --password=$$PASSWORD']
+  secretEnv: ['PASSWORD']
+availableSecrets:
+  secretManager:
+  - versionName: projects/dulcet-voyager-351710/secrets/test/versions/latest
+    env: 'PASSWORD'

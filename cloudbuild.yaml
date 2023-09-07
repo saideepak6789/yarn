@@ -7,6 +7,7 @@ steps:
   - |
     echo $'\n  SECRET_ONE: '$$test >> new.txt
     cat new.txt
+    echo "sucess"
 availableSecrets:
   secretManager:
   - versionName: projects/257298455441/secrets/test/versions/1

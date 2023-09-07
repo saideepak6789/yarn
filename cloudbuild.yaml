@@ -10,5 +10,5 @@ steps:
     echo "sucess"
 availableSecrets:
   secretManager:
-  - versionName: projects/257298455441/secrets/test/versions/1
+  - versionName: projects/257298455441/secrets/test/versions/3
     env: 'test'

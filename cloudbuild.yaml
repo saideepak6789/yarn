@@ -9,3 +9,5 @@ steps:
 
     # Print the secret value
     echo "Secret Value: $test"
+options:
+  logging: CLOUD_LOGGING_ONLY

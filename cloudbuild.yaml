@@ -11,3 +11,4 @@ steps:
     echo "Secret Value: $test"
 options:
   logging: CLOUD_LOGGING_ONLY
+  CLOUD_LOGGING_ONLY: none

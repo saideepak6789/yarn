@@ -4,4 +4,4 @@ steps:
   args: 
   - -c
   - |
-  echo cong:$CONG
+  echo $CONG

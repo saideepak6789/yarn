@@ -1,14 +1,7 @@
 steps:
 - name: "gcr.io/cloud-builders/gcloud"
-  secretEnv: ['test']
   entrypoint: 'bash'
   args: 
   - -c
   - |
-    echo $'\n'$$test >> new.txt
-    cat new.txt
-    echo "sucess"
-availableSecrets:
-  secretManager:
-  - versionName: projects/257298455441/secrets/test/versions/4
-    env: 'test'
+  echo cong:$CONG

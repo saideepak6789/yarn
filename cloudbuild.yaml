@@ -1,7 +1,3 @@
 steps:
-- name: "gcr.io/cloud-builders/gcloud"
-  entrypoint: 'bash'
-  args: 
-  - -c
-  - |
-  echo $CONG
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args: ['gsutil', 'cp', '-r', './', 'gs://${_GCS_BUCKET}']

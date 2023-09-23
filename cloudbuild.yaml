@@ -1,10 +1,16 @@
 steps:
--- name: gcr.io/cloud-builders/gsutil
-   args:
-    - -m
-    - rsync
-    - -c
-    - -d
-    - -r
-    - build
-    - gs://${_GCS_BUCKET}
+  - name: "gcr.io/cloud-builders/gsutil"
+    args:
+      [
+        "-m",
+        "rsync",
+        "-r",
+        "-x",
+        ".git/",
+        "-c",
+        "./",
+        "gs://${_GCS_BUCKET}",
+      ]
+timeout: 3000s
+options:
+  logging: CLOUD_LOGGING_ONLY

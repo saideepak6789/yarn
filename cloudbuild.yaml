@@ -1,5 +1,10 @@
 steps:
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  args: ['gsutil', 'rm', '-r', './', 'gs://${_GCS_BUCKET}']
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  args: ['gsutil', 'cp', '-r', './', 'gs://${_GCS_BUCKET}']
+-- name: gcr.io/cloud-builders/gsutil
+   args:
+    - -m
+    - rsync
+    - -c
+    - -d
+    - -r
+    - build
+    - gs://${_GCS_BUCKET}

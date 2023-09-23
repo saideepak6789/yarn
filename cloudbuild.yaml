@@ -8,7 +8,7 @@ steps:
         "-x",
         ".git/",
         "-c",
-        "./style",
+        "./styles",
         "gs://${_GCS_BUCKET}",
       ]
 timeout: 3000s

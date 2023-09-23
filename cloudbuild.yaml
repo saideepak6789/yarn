@@ -1,16 +1,6 @@
 steps:
-  - name: "gcr.io/cloud-builders/gsutil"
-    args:
-      [
-        "-m",
-        "cp",
-        "-r",
-        "-x",
-        ".git/",
-        "-c",
-        "./",
-        "gs://${_GCS_BUCKET}",
-      ]
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args: ['gsutil', 'cp', '-r', 'build', 'gs://${_GCS_BUCKET}']
 timeout: 3000s
 options:
   logging: CLOUD_LOGGING_ONLY

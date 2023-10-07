@@ -1,5 +1,4 @@
 FROM node:18-alpine AS base
-RUN $_CHAR=char
 ENV one=$_CHAR
 RUN echo one
 # Install dependencies only when needed
